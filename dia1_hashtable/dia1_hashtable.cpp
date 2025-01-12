@@ -3,9 +3,9 @@
 #include <vector>
 #include <unordered_map>
 #include <algorithm>
-#include <cmath> // Para abs()
+#include <cmath> 
 
-// Función para calcular la distancia total entre dos listas
+// Función para calcular la distancia total entre las dos listas introducidas
 int calcularDistanciaTotal(const std::vector<int>& izquierda, const std::vector<int>& derecha) {
     // Crear tablas hash para contar las frecuencias de los números en ambas listas
     std::unordered_map<int, int> hashIzquierda;
@@ -21,7 +21,7 @@ int calcularDistanciaTotal(const std::vector<int>& izquierda, const std::vector<
         hashDerecha[num]++;
     }
 
-    // Extraer claves (números únicos) de ambas tablas hash
+    // Extraer claves (números únicos asociados a cada número de las listas recibidas) de ambas tablas hash
     std::vector<int> clavesIzquierda;
     std::vector<int> clavesDerecha;
 
@@ -33,16 +33,17 @@ int calcularDistanciaTotal(const std::vector<int>& izquierda, const std::vector<
         clavesDerecha.push_back(par.first);
     }
 
-    // Ordenar las claves para emparejar por valores mínimos
+    // Ordenar las claves con sus respectivos valores de las tablas izquierda y derecha para emparejar por valores mínimos
     std::sort(clavesIzquierda.begin(), clavesIzquierda.end());
     std::sort(clavesDerecha.begin(), clavesDerecha.end());
 
-    // Inicializar punteros para recorrer ambas listas de claves
+    // Inicializar punteros para recorrer las dos listas de claves
     int i = 0, j = 0;
     int distanciaTotal = 0;
 
-    // Emparejar las claves de las dos listas
+    // Emparejar las claves de las dos listas para calcular las distancias de sus valores asociados y para finalmente devolver el valor total entre las dos listas
     while (i < clavesIzquierda.size() && j < clavesDerecha.size()) {
+
         // Obtener el número de veces que se debe considerar este par
         int minimoFrecuencia = std::min(hashIzquierda[clavesIzquierda[i]], hashDerecha[clavesDerecha[j]]);
 
@@ -60,6 +61,7 @@ int calcularDistanciaTotal(const std::vector<int>& izquierda, const std::vector<
         if (hashIzquierda[clavesIzquierda[i]] == 0) {
             i++;
         }
+
         if (hashDerecha[clavesDerecha[j]] == 0) {
             j++;
         }
@@ -69,7 +71,7 @@ int calcularDistanciaTotal(const std::vector<int>& izquierda, const std::vector<
 }
 
 int main() {
-    // Listas a ser llenadas por el usuario
+    // Vectores de tamaño regulable donde se guardaran las listas a ser llenadas por el usuario
     std::vector<int> izquierda;
     std::vector<int> derecha;
 
@@ -95,10 +97,10 @@ int main() {
         derecha.push_back(valor);
     }
 
-    // Calcular la distancia total
+    // Calcular la distancia total entre las listas introducidas
     int distancia = calcularDistanciaTotal(izquierda, derecha);
 
-    // Mostrar el resultado
+    // Mostrar el resultado final de la distancia total entre las listas
     std::cout << "La distancia total entre las listas es: " << distancia << std::endl;
 
     return 0;
