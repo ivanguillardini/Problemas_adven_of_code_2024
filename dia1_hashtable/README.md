@@ -1,11 +1,10 @@
 
-
 # Advent of Code Ej1 -- Tablas Hash
 
 ## Descripción del Programa
-El problema se centra en resolver la discrepancia entre dos listas de números, que representan los IDs de las ubicaciones donde podría encontrarse el historiador jefe. Estas listas son proporcionadas por dos grupos de historiadores, y aunque cada lista contiene números únicos, no coinciden entre sí. El objetivo es:
+El problema se centra en resolver la discrepancia entre dos listas de números, que representan los IDs de las ubicaciones donde podría encontrarse el historiador jefe. Estas listas son proporcionadas por dos grupos de historiadores, y aunque cada lista contiene números únicos, no coinciden entre sí. El objetivo es encontar las distancia entre las listas.
 
-Este programa en C++ permite calcular la distancia total entre dos listas de números enteros ingresadas por el usuario. Utiliza tablas hash para optimizar la búsqueda y emparejamiento de los números en ambas listas, minimizando la distancia total entre ellos mediante un algoritmo eficiente de ordenamiento y emparejamiento.
+Para ello, usaremos este programa en C++ permite calcular la distancia total entre dos listas de números enteros ingresadas por el usuario. Utiliza tablas hash para optimizar la búsqueda y emparejamiento de los números en ambas listas, minimizando la distancia total entre ellos mediante un algoritmo eficiente de ordenamiento y emparejamiento.
 
 El objetivo del programa es sumar las diferencias absolutas entre los números de ambas listas, considerando sus frecuencias y emparejándolos en orden ascendente.
 
@@ -83,15 +82,4 @@ La distancia total entre las listas es: 11
 - Los números deben ser enteros.
 - La entrada de datos es validada solo superficialmente; se asume que el usuario proporciona datos válidos.
 
-## Compilación y Ejecución
-Para compilar y ejecutar el programa:
-1. Compila el código con `g++`:
-   ```bash
-   g++ programa.cpp -o programa
-   ```
-2. Ejecuta el programa:
-   ```bash
-   ./programa
-   ```
 
-¡Prueba este programa y optimiza tus cálculos de distancias entre listas de números!.
